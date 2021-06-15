@@ -2,9 +2,9 @@
 # License: MIT. See license file in root directory
 # Copyright(c) JetsonHacks (2017-2019)
 
-OPENCV_VERSION=4.1.1
+OPENCV_VERSION=4.4.0
 # Jetson Nano
-ARCH_BIN=5.3
+ARCH_BIN=5.3,6.2,7.2
 INSTALL_DIR=/usr/local
 # Download the opencv_extras repository
 # If you are installing the opencv testdata, ie
