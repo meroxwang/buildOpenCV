@@ -80,23 +80,45 @@ cd $WHEREAMI
 sudo apt-get install -y \
     build-essential \
     cmake \
+    git \
+    gfortran \
+    libatlas-base-dev \
     libavcodec-dev \
     libavformat-dev \
-    libavutil-dev \
+    libavresample-dev \
+    libcanberra-gtk3-module \
+    libdc1394-22-dev \
     libeigen3-dev \
     libglew-dev \
-    libgtk2.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    libgstreamer-plugins-good1.0-dev \
+    libgstreamer1.0-dev \
     libgtk-3-dev \
     libjpeg-dev \
+    libjpeg8-dev \
+    libjpeg-turbo8-dev \
+    liblapack-dev \
+    liblapacke-dev \
+    libopenblas-dev \
     libpng-dev \
     libpostproc-dev \
     libswscale-dev \
     libtbb-dev \
-    libtiff5-dev \
+    libtbb2 \
+    libtesseract-dev \
+    libtiff-dev \
     libv4l-dev \
+    libxine2-dev \
     libxvidcore-dev \
     libx264-dev \
-    qt5-default \
+    python-dev \
+    python-numpy \
+    python3-dev \
+    python3-numpy \
+    python3-matplotlib \
+    qv4l2 \
+    v4l-utils \
+    v4l2ucp \
     zlib1g-dev \
     pkg-config
 
@@ -152,9 +174,11 @@ echo $PWD
 time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} \
       -D WITH_CUDA=ON \
+      -D WITH_CUDNN=ON \
       -D CUDA_ARCH_BIN=${ARCH_BIN} \
       -D CUDA_ARCH_PTX="" \
       -D ENABLE_FAST_MATH=ON \
+      -D ENABLE_NEON=ON \
       -D CUDA_FAST_MATH=ON \
       -D WITH_CUBLAS=ON \
       -D WITH_LIBV4L=ON \
@@ -167,6 +191,9 @@ time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D BUILD_opencv_python3=ON \
       -D BUILD_TESTS=OFF \
       -D BUILD_PERF_TESTS=OFF \
+      -D OPENCV_DNN_CUDA=ON \
+      -D OPENCV_ENABLE_NONFREE=ON \
+      -D OPENCV_GENERATE_PKGCONFIG=ON \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
       $"PACKAGE_OPENCV" \
       ../
