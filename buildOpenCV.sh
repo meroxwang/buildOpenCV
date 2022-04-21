@@ -2,9 +2,12 @@
 # License: MIT. See license file in root directory
 # Copyright(c) JetsonHacks (2017-2019)
 
-OPENCV_VERSION=4.5.2
+# OPENCV_VERSION=4.5.2
+OPENCV_VERSION=4.5.4
 # Jetson Nano
-ARCH_BIN=5.3,6.2,7.2
+# ARCH_BIN=5.3,6.2,7.2
+# RTX3090
+ARCH_BIN=8.6
 INSTALL_DIR=/usr/local
 # Download the opencv_extras repository
 # If you are installing the opencv testdata, ie
@@ -58,7 +61,8 @@ CMAKE_INSTALL_PREFIX=$INSTALL_DIR
 
 # Print out the current configuration
 echo "Build configuration: "
-echo " NVIDIA Jetson Nano"
+# echo " NVIDIA Jetson Nano"
+echo " NVIDIA RTX3090"
 echo " OpenCV binaries will be installed in: $CMAKE_INSTALL_PREFIX"
 echo " OpenCV Source will be installed in: $OPENCV_SOURCE_DIR"
 if [ "$PACKAGE_OPENCV" = "" ] ; then
