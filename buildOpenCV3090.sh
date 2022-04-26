@@ -3,7 +3,7 @@
 # Copyright(c) JetsonHacks (2017-2019)
 
 # OPENCV_VERSION=4.5.2
-OPENCV_VERSION=4.5.4
+OPENCV_VERSION=4.5.3
 # Jetson Nano
 # ARCH_BIN=5.3,6.2,7.2
 # RTX3090
@@ -22,7 +22,8 @@ WHEREAMI=$PWD
 # This will default to the number of CPU cores (on the Nano, that's 4)
 # If you are using a SD card, you may want to change this
 # to 1. Also, you may want to increase the size of your swap file
-NUM_JOBS=$(nproc)
+# NUM_JOBS=$(nproc)
+NUM_JOBS=32
 
 CLEANUP=true
 
@@ -177,20 +178,32 @@ cd build
 echo $PWD
 time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} \
+      -D BUILD_PYTHON_SUPPORT=ON \
+      -D BUILD_DOCS=ON \
       -D WITH_CUDA=ON \
       -D WITH_CUDNN=ON \
+      -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-11.1 \
+      -D CMAKE_LIBRARY_PATH=/usr/local/cuda-11.1/lib64/stubs \
       -D CUDA_ARCH_BIN=${ARCH_BIN} \
       -D CUDA_ARCH_PTX="" \
       -D ENABLE_FAST_MATH=ON \
       -D ENABLE_NEON=ON \
       -D CUDA_FAST_MATH=ON \
+      -D INSTALL_CREATE_DISTRIB=ON \
+      -D WITH_FFMPEG=ON \
       -D WITH_CUBLAS=ON \
+      -D WITH_NVCUVID=ON \
       -D WITH_LIBV4L=ON \
+      -D WITH_TBB=ON \
       -D WITH_V4L=ON \
       -D WITH_GSTREAMER=ON \
       -D WITH_GSTREAMER_0_10=OFF \
       -D WITH_QT=ON \
       -D WITH_OPENGL=ON \
+      -D WITH_GTK=ON \
+      -D WITH_GTK_2_X=ON \
+      -D WITH_IPP=ON \
+      -D BUILD_TIFF=ON \
       -D BUILD_opencv_python2=ON \
       -D BUILD_opencv_python3=ON \
       -D BUILD_TESTS=OFF \
