@@ -31,7 +31,7 @@ PACKAGE_OPENCV="-D CPACK_BINARY_DEB=ON"
 
 function usage
 {
-    echo "usage: ./buildOpenCV.sh [[-s sourcedir ] | [-h]]"
+    echo "usage: ./buildOpenCV3090.sh [[-s sourcedir ] | [-h]]"
     echo "-s | --sourcedir   Directory in which to place the opencv sources (default $HOME)"
     echo "-i | --installdir  Directory in which to install opencv libraries (default /usr/local)"
     echo "--no_package       Do not package OpenCV as .deb file (default is true)"
@@ -129,7 +129,7 @@ apt-get install -y \
 
 # We will be supporting OpenGL, we need a little magic to help
 # https://devtalk.nvidia.com/default/topic/1007290/jetson-tx2/building-opencv-with-opengl-support-/post/5141945/#5141945
-cd /usr/local/cuda/include
+cd /usr/local/cuda-11.1/include
 patch -N cuda_gl_interop.h $WHEREAMI'/patches/OpenGLHeader.patch' 
 
 # Python 2.7
