@@ -3,7 +3,7 @@
 # Copyright(c) JetsonHacks (2017-2019)
 
 # OPENCV_VERSION=4.5.2
-OPENCV_VERSION=4.5.3
+OPENCV_VERSION=4.5.4
 # Jetson Nano
 # ARCH_BIN=5.3,6.2,7.2
 # RTX3090
@@ -78,6 +78,7 @@ fi
 
 # Repository setup
 apt-add-repository universe
+add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 apt-get update
 
 # Download dependencies for the desired configuration
@@ -85,43 +86,68 @@ cd $WHEREAMI
 apt-get install -y \
     build-essential \
     cmake \
+    gcc \
+    g++ \
     git \
     gfortran \
+    at-spi2-core \
+    libasound2-dev \
     libatlas-base-dev \
     libavcodec-dev \
     libavformat-dev \
     libavresample-dev \
+    libavutil-dev \
+    libblas-dev \
+    libc6-dev \
     libcanberra-gtk3-module \
     libdc1394-22-dev \
     libeigen3-dev \
+    libgdbm-dev \
     libglew-dev \
+    libgl1-mesa-glx \
     libgstreamer-plugins-base1.0-dev \
     libgstreamer-plugins-good1.0-dev \
     libgstreamer1.0-dev \
+    libgtk2.0-dev \
     libgtk-3-dev \
+    libffi-dev \
+    libjasper1 \
+    libjasper-dev \
     libjpeg-dev \
     libjpeg8-dev \
     libjpeg-turbo8-dev \
     liblapack-dev \
     liblapacke-dev \
+    libncursesw5-dev \
     libopenblas-dev \
+    libopenexr-dev \
     libpng-dev \
     libpostproc-dev \
+    libspeex-dev \
+    libsqlite3-dev \
+    libssl-dev \
     libswscale-dev \
     libtbb-dev \
     libtbb2 \
     libtesseract-dev \
     libtiff-dev \
+    libtool \
     libv4l-dev \
+    libwebp-dev \
+    libxslt1-dev \
     libxine2-dev \
     libxvidcore-dev \
     libx264-dev \
+    libzstd-dev \
+    nasm \
+    openssl \
     python-dev \
     python-numpy \
     python3-dev \
     python3-numpy \
     python3-matplotlib \
     qv4l2 \
+    tk-dev \
     v4l-utils \
     v4l2ucp \
     zlib1g-dev \
