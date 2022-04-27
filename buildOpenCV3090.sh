@@ -110,6 +110,8 @@ apt-get install -y \
     libgstreamer1.0-dev \
     libgtk2.0-dev \
     libgtk-3-dev \
+    libgtkglext1 \
+    libgtkglext1-dev \
     libffi-dev \
     libjasper1 \
     libjasper-dev \
