@@ -227,6 +227,7 @@ time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_GSTREAMER=ON \
       -D WITH_GSTREAMER_0_10=OFF \
       -D WITH_QT=ON \
+      -D Qt5_DIR=/opt/Qt5.9.0/5.9/gcc_64/lib/cmake/Qt5 \
       -D WITH_OPENGL=ON \
       -D WITH_GTK=ON \
       -D WITH_GTK_2_X=ON \
